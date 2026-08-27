@@ -4,25 +4,26 @@ IMPORTANT: This file was signed by Sparkle. Any modifications to this file requi
     <channel>
         <title>CodexMeter</title>
         <item>
-            <title>0.1.3</title>
-            <pubDate>Thu, 27 Aug 2026 20:49:08 +0900</pubDate>
-            <link>https://github.com/HechoLP/CodexMeter-Releases/releases/tag/v0.1.3</link>
-            <sparkle:version>4</sparkle:version>
-            <sparkle:shortVersionString>0.1.3</sparkle:shortVersionString>
+            <title>0.1.4</title>
+            <pubDate>Thu, 27 Aug 2026 21:44:59 +0900</pubDate>
+            <link>https://github.com/HechoLP/CodexMeter-Releases/releases/tag/v0.1.4</link>
+            <sparkle:version>5</sparkle:version>
+            <sparkle:shortVersionString>0.1.4</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-            <description sparkle:format="markdown"><![CDATA[# CodexMeter 0.1.3
+            <description sparkle:format="markdown"><![CDATA[# CodexMeter 0.1.4
 
-- Replaces vague history-quality warnings with concrete refresh results and update timestamps.
-- Rotates the refresh control once per refresh and animates changed totals without continuous motion.
-- Respects the macOS Reduce Motion accessibility setting.
-- Adds installation through the public `HechoLP/homebrew-tap` personal Tap.
+- Fixes inflated **All Time** totals caused by copied parent token history in inherited Codex sessions.
+- Rebuilds the local derived statistics once after updating, while preserving Codex source logs, CodexMeter settings, and any local-history cutoff.
+- Handles inherited sessions that do not include an explicit replay ordinal or a second copied session-metadata record.
+
+The first refresh after updating may take longer while CodexMeter safely reconstructs its local statistics. No prompt, response, source-code, or credential content is imported into the database.
 
 This build is ad-hoc signed and is not notarized by Apple. Homebrew verifies the exact published ZIP with SHA-256, but the personal Tap does not make the app Apple-trusted.
 
 ## Homebrew
 
 ```bash
-brew install --cask HechoLP/tap/codexmeter
+brew upgrade --cask HechoLP/tap/codexmeter
 xattr -dr com.apple.quarantine /Applications/CodexMeter.app
 open /Applications/CodexMeter.app
 ```
@@ -31,12 +32,12 @@ The `xattr` command removes macOS download quarantine from `CodexMeter.app` only
 
 ## Direct download
 
-Download `CodexMeter-0.1.3.dmg` and `SHA256SUMS.txt` from the official public release into the same folder. Do not continue unless the checksum command prints `OK`.
+Download `CodexMeter-0.1.4.dmg` and `SHA256SUMS.txt` from the official public release into the same folder. Do not continue unless the checksum command prints `OK`.
 
 ```bash
 cd ~/Downloads
-grep ' CodexMeter-0.1.3.dmg$' SHA256SUMS.txt | shasum -a 256 -c -
-open CodexMeter-0.1.3.dmg
+grep ' CodexMeter-0.1.4.dmg$' SHA256SUMS.txt | shasum -a 256 -c -
+open CodexMeter-0.1.4.dmg
 ```
 
 Copy `CodexMeter.app` from the DMG to `Applications`, then remove quarantine from that app and launch it:
@@ -46,10 +47,10 @@ xattr -dr com.apple.quarantine /Applications/CodexMeter.app
 open /Applications/CodexMeter.app
 ```
 ]]></description>
-            <enclosure url="https://github.com/HechoLP/CodexMeter-Releases/releases/download/v0.1.3/CodexMeter-0.1.3.zip" length="1869762" type="application/octet-stream" sparkle:edSignature="3Ousdv81gRIi3YPmhrtjIW1ffS5MljtnoTQR7fZs7Mcyh4FIY7QtYwbgVoNm1N0p/O79yjTBPoeLEAgaeoFxCQ=="></enclosure>
+            <enclosure url="https://github.com/HechoLP/CodexMeter-Releases/releases/download/v0.1.4/CodexMeter-0.1.4.zip" length="1869758" type="application/octet-stream" sparkle:edSignature="7fBFDLS0cTG4rXD7brI+RHbFKClpCTXuXjISpq6mPTYdyqOH+ReDzcCWX4TuomiMXethWsjUccnYPf7O/GBOCw=="></enclosure>
         </item>
     </channel>
 </rss><!-- sparkle-signatures:
-edSignature: zqUG5093wZf68+DTVAM4Z4+q62+vQ4HqgyWn1ZYTg0T04qfR832zrcgagOJ0Tm+m6ZH27mLw6L6PEh8sIDbsAg==
-length: 2601
+edSignature: NeQnLmVeHGc0QNTzv4D7NNiIePgr08C82N7tXAqJUGI3+Bv5+7nF4f3qnq+d+YvIgS44o49biBnfg9A/ebP9BA==
+length: 2838
 -->
