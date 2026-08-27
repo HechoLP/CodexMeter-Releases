@@ -4,53 +4,66 @@ IMPORTANT: This file was signed by Sparkle. Any modifications to this file requi
     <channel>
         <title>CodexMeter</title>
         <item>
-            <title>0.1.6</title>
-            <pubDate>Thu, 27 Aug 2026 23:01:50 +0900</pubDate>
-            <link>https://github.com/HechoLP/CodexMeter-Releases/releases/tag/v0.1.6</link>
-            <sparkle:version>7</sparkle:version>
-            <sparkle:shortVersionString>0.1.6</sparkle:shortVersionString>
+            <title>1.0.0</title>
+            <pubDate>Fri, 28 Aug 2026 08:23:28 +0900</pubDate>
+            <link>https://github.com/HechoLP/CodexMeter-Releases/releases/tag/v1.0.0</link>
+            <sparkle:version>100</sparkle:version>
+            <sparkle:shortVersionString>1.0.0</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-            <description sparkle:format="markdown"><![CDATA[# CodexMeter 0.1.6
+            <description sparkle:format="markdown"><![CDATA[# CodexMeter 1.0.0
 
-- Aligns Today, This Week, This Month, and All Time with the token-activity total displayed by the ChatGPT profile.
-- Calculates the displayed total as `Input + Cached Input + Output` while keeping every component visible for auditing.
-- Leaves the local database and Codex source logs unchanged; only the displayed total definition changes.
+CodexMeter 1.0.0 is the first stable release for macOS 14+ and Windows 10/11.
 
-The raw Codex JSONL field named `total_tokens` equals input plus output. The ChatGPT profile activity figure also counts cached input as a separate component, so this release uses the profile-compatible definition for values labelled Total.
+## Highlights
 
-This build is ad-hoc signed and is not notarized by Apple. Homebrew verifies the exact published ZIP with SHA-256, but the personal Tap does not make the app Apple-trusted.
+- Shows Today, This Week, This Month, and locally observable All Time totals for input, cached input, output, and total activity.
+- Matches the ChatGPT profile activity definition: `Input + Cached Input + Output`.
+- Starts icon-only, opens a native Settings window reliably, and gives animated feedback while a refresh is running.
+- Normalizes cumulative Codex counters without double-counting repeated, archived, forked, inherited, partial, truncated, or rewritten session history.
+- Processes only local `.codex` session JSONL files and never stores prompts, responses, source code, credentials, raw session paths, model names, or project paths.
+- Provides daily Ed25519-authenticated Sparkle updates on macOS and an explicit GitHub Releases link on Windows.
+- Includes Universal 2 macOS ZIP/DMG packages and self-contained Windows x64/ARM64 ZIP packages under one `v1.0.0` release.
+- Documents planned future support for Claude and other AI coding assistants while keeping Codex as the first supported source.
 
-## Homebrew
+## Integrity and platform trust
+
+These stable packages are distributed without Apple Developer ID, Apple notarization, or a Microsoft publisher certificate. Verify the official SHA-256 manifest before bypassing Gatekeeper or SmartScreen. The macOS automatic-update feed and ZIP archive are separately authenticated with Sparkle Ed25519 signatures.
+
+## macOS with Homebrew
 
 ```bash
-brew upgrade --cask HechoLP/tap/codexmeter
+brew install --cask HechoLP/tap/codexmeter
 xattr -dr com.apple.quarantine /Applications/CodexMeter.app
 open /Applications/CodexMeter.app
 ```
 
-The `xattr` command removes macOS download quarantine from `CodexMeter.app` only. Run it only after the Homebrew installation completes from `HechoLP/tap/codexmeter`.
+Run the `xattr` command only after Homebrew finishes installing `HechoLP/tap/codexmeter`.
 
-## Direct download
+## macOS direct download
 
-Download `CodexMeter-0.1.6.dmg` and `SHA256SUMS.txt` from the official public release into the same folder. Do not continue unless the checksum command prints `OK`.
+Download `CodexMeter-1.0.0.dmg` and `SHA256SUMS.txt` from the official release into the same folder. Continue only if verification prints `OK`:
 
 ```bash
 cd ~/Downloads
-grep ' CodexMeter-0.1.6.dmg$' SHA256SUMS.txt | shasum -a 256 -c -
-open CodexMeter-0.1.6.dmg
+grep ' CodexMeter-1.0.0.dmg$' SHA256SUMS.txt | shasum -a 256 -c -
+open CodexMeter-1.0.0.dmg
 ```
 
-Copy `CodexMeter.app` from the DMG to `Applications`, then remove quarantine from that app and launch it:
+Copy `CodexMeter.app` to Applications, then run the two app-scoped commands shown above.
 
-```bash
-xattr -dr com.apple.quarantine /Applications/CodexMeter.app
-open /Applications/CodexMeter.app
+## Windows portable download
+
+Download the x64 or ARM64 ZIP with `SHA256SUMS-windows.txt`, compare the PowerShell `Get-FileHash` result with the manifest, and extract the verified package to a permanent folder. If Windows marks the file as blocked:
+
+```powershell
+Unblock-File .\CodexMeter.exe
+Start-Process .\CodexMeter.exe
 ```
 ]]></description>
-            <enclosure url="https://github.com/HechoLP/CodexMeter-Releases/releases/download/v0.1.6/CodexMeter-0.1.6.zip" length="1870333" type="application/octet-stream" sparkle:edSignature="BXK91lEM9SoUeBYYC/87Ae/F6if0at3h8WdkcaMI/m4eBHPzt23xBgF4B+IsbR8VZNSDg75E7MUMCQ5fn9e6Cg=="></enclosure>
+            <enclosure url="https://github.com/HechoLP/CodexMeter-Releases/releases/download/v1.0.0/CodexMeter-1.0.0.zip" length="1891940" type="application/octet-stream" sparkle:edSignature="1NnSayazOOuCmf4/7yFNsEw/+0pQPZCduHOW5fLGI4SA5Ces87jpZmNMG/ogYF5CFa0z8zNOsizjRjMQIl+hAQ=="></enclosure>
         </item>
     </channel>
 </rss><!-- sparkle-signatures:
-edSignature: 6S9M/r6Rvs1OyrcLvmKv5ECUV3+oI6XHeBW4olaznyJMHeuCHZ0tXR3XS542+oPQ0ywMy2zY2flTAMuzhwWXCw==
-length: 2854
+edSignature: a09t2AiSTPnnPgVKm3OtZB20FrAskv9wjP78qC13YVWPH1ouX0I7Y/TakgbAH1iF11fzF/2BtX8yR75fhNRUCg==
+length: 3679
 -->
