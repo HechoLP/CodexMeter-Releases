@@ -4,23 +4,22 @@ IMPORTANT: This file was signed by Sparkle. Any modifications to this file requi
     <channel>
         <title>CodexMeter</title>
         <item>
-            <title>1.0.1</title>
-            <pubDate>Fri, 28 Aug 2026 08:55:20 +0900</pubDate>
-            <link>https://github.com/HechoLP/CodexMeter-Releases/releases/tag/v1.0.1</link>
-            <sparkle:version>101</sparkle:version>
-            <sparkle:shortVersionString>1.0.1</sparkle:shortVersionString>
+            <title>1.0.2</title>
+            <pubDate>Fri, 28 Aug 2026 09:27:59 +0900</pubDate>
+            <link>https://github.com/HechoLP/CodexMeter-Releases/releases/tag/v1.0.2</link>
+            <sparkle:version>102</sparkle:version>
+            <sparkle:shortVersionString>1.0.2</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-            <description sparkle:format="markdown"><![CDATA[# CodexMeter 1.0.1
+            <description sparkle:format="markdown"><![CDATA[# CodexMeter 1.0.2
 
-CodexMeter 1.0.1 fixes the menu-bar text control and makes the scope of lifetime totals explicit.
+CodexMeter 1.0.2 makes the macOS Settings experience easier to scan, navigate, and understand.
 
 ## Changes
 
-- **Show token text** can now be enabled directly from the default icon-only presentation.
-- Menu-bar text content, period, and number format remain available as separate choices once text is enabled.
-- The previous **All Time** label is now **Local History** because CodexMeter reads only session records currently present on this computer.
-- The activity formula remains `Input + Cached Input + Output`; the local value can be lower than the ChatGPT account total when older logs or activity from another computer are unavailable locally.
-- Windows uses the same **Local History** terminology.
+- Settings now opens in a spacious, resizable window (980×680pt by default; 840×560pt minimum), so a category's controls are visible together instead of being constrained by the former compact window.
+- A persistent sidebar lists every category with an icon, name, and purpose. It works with normal macOS keyboard navigation and exposes descriptive labels to VoiceOver.
+- The selected category stays selected when the Settings window is reopened.
+- The new **Information** category shows the installed version and build alongside local-data scope, privacy, updater, source, releases, and license links.
 
 ## Integrity and platform trust
 
@@ -34,16 +33,16 @@ xattr -dr com.apple.quarantine /Applications/CodexMeter.app
 open /Applications/CodexMeter.app
 ```
 
-Existing macOS installations can update through CodexMeter's signed update checker after the v1.0.1 feed is published.
+Existing macOS installations can update through CodexMeter's signed update checker after the v1.0.2 feed is published.
 
 ## Windows portable download
 
 Download the x64 or ARM64 ZIP together with `SHA256SUMS-windows.txt`, compare the PowerShell `Get-FileHash` result with the manifest, and extract the verified package to a permanent folder.
 ]]></description>
-            <enclosure url="https://github.com/HechoLP/CodexMeter-Releases/releases/download/v1.0.1/CodexMeter-1.0.1.zip" length="1889744" type="application/octet-stream" sparkle:edSignature="VkQPlJBV2tIbyZSVUpqZ8W87tXo6zd68ByjPn+Nk2rUkGLujNo7+nOF8plvtmpDi3YqjzhCmnAthDCuvy1H6CQ=="></enclosure>
+            <enclosure url="https://github.com/HechoLP/CodexMeter-Releases/releases/download/v1.0.2/CodexMeter-1.0.2.zip" length="1948231" type="application/octet-stream" sparkle:edSignature="dIn3ngaUpL3q/bP7PyKzIZr8f4wVnXzxOhUt82p76NLPJHV9Uq0Nnu3RTP2os+qvkMwCik6LmeVt87PA9kkqDw=="></enclosure>
         </item>
     </channel>
 </rss><!-- sparkle-signatures:
-edSignature: rssMhqUGWBHawji+idmdMLq4umBefbPQmZWkQIUmCrfrblnVFkjtVGOX2gKWS9/Ez/UqDk1Ex91zG42vuZcMAg==
-length: 2811
+edSignature: MECfm/QF3RnE5YvaOrG8rNq0093SW7CiOoP8GmS5iC+l69fWmOIv60c+O5+k4QDzJeUj7YzQcknaS8YMY8ZXCA==
+length: 2817
 -->
