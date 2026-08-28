@@ -4,26 +4,24 @@ IMPORTANT: This file was signed by Sparkle. Any modifications to this file requi
     <channel>
         <title>CodexMeter</title>
         <item>
-            <title>1.0.3</title>
-            <pubDate>Fri, 28 Aug 2026 10:40:03 +0900</pubDate>
-            <link>https://github.com/HechoLP/CodexMeter-Releases/releases/tag/v1.0.3</link>
-            <sparkle:version>103</sparkle:version>
-            <sparkle:shortVersionString>1.0.3</sparkle:shortVersionString>
+            <title>1.0.4</title>
+            <pubDate>Fri, 28 Aug 2026 11:05:40 +0900</pubDate>
+            <link>https://github.com/HechoLP/CodexMeter/releases/tag/v1.0.4</link>
+            <sparkle:version>104</sparkle:version>
+            <sparkle:shortVersionString>1.0.4</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-            <description sparkle:format="markdown"><![CDATA[# CodexMeter 1.0.3
+            <description sparkle:format="markdown"><![CDATA[# CodexMeter 1.0.4
 
-CodexMeter 1.0.3 fixes the mismatch between this Mac's available session history and the account-wide totals shown by the ChatGPT profile.
+CodexMeter 1.0.4 consolidates the public downloads and signed macOS update feed into the main `HechoLP/CodexMeter` repository.
 
 ## Changes
 
-- macOS can now explicitly enable **Use ChatGPT account totals** in **Settings → Usage & Privacy**.
-- The popover clearly separates the latest dated ChatGPT profile day, current week, current month, and lifetime values from the **This Mac** input, cached-input, and output breakdown.
-- The server's exact snapshot date is always shown because account statistics can lag behind live local activity.
-- Opt-in and week-start changes refresh immediately. Local midnight, wake, clock, and time-zone changes invalidate the old calendar period before requesting the new one. Opt-out cancels automatic work and removes the in-memory account snapshot.
-- Credential and profile responses are not stored in SQLite, UserDefaults, Keychain, or diagnostics. The local database remains only an incremental cache for auditable local session history.
-- Windows remains local-only in this release.
+- macOS and Windows downloads now live on the same repository as the source and immutable release tag.
+- The macOS app now checks the signed `HechoLP/CodexMeter` update feed.
+- Release links in both applications and the installation documentation now open the consolidated release page.
+- The personal Homebrew Tap remains separate because Homebrew discovers `HechoLP/tap` through the `HechoLP/homebrew-tap` repository, but its Cask downloads the ZIP from the main repository.
 
-The account view uses a non-public ChatGPT endpoint and may require a CodexMeter update if that endpoint changes. Local accounting continues to work independently.
+The 1.0.4 feed is also published once to the legacy `CodexMeter-Releases` update branch so installations through 1.0.3 can upgrade safely. The legacy repository remains public and read-only after that bridge; it is not used for later releases.
 
 ## Integrity and platform trust
 
@@ -38,16 +36,16 @@ xattr -dr com.apple.quarantine /Applications/CodexMeter.app
 open /Applications/CodexMeter.app
 ```
 
-Fresh installations can use `brew install --cask HechoLP/tap/codexmeter`. Existing macOS installations can also update through CodexMeter's signed update checker after the v1.0.3 feed is published.
+Fresh installations can use `brew install --cask HechoLP/tap/codexmeter`.
 
 ## Windows portable download
 
 Download the x64 or ARM64 ZIP together with `SHA256SUMS-windows.txt`, compare the PowerShell `Get-FileHash` result with the manifest, and extract the verified package to a permanent folder.
 ]]></description>
-            <enclosure url="https://github.com/HechoLP/CodexMeter-Releases/releases/download/v1.0.3/CodexMeter-1.0.3.zip" length="2154435" type="application/octet-stream" sparkle:edSignature="hBGC+vzINhseUeBe6l5Tq8bGYozWfXrEXPZFPmt5E/A9V7EtiHD3rA84Uf4OiecnMJHKXqp9mSgRFz16HlIJDQ=="></enclosure>
+            <enclosure url="https://github.com/HechoLP/CodexMeter/releases/download/v1.0.4/CodexMeter-1.0.4.zip" length="2154470" type="application/octet-stream" sparkle:edSignature="v+lo49WnH7RbnSy1EDBbDYVZ++ZzQ2mAJnayg/m/MI9lxfPv7/q1LSCYUXEbPqZ0qJJRGfUmuPbHCIPNPOPUBQ=="></enclosure>
         </item>
     </channel>
 </rss><!-- sparkle-signatures:
-edSignature: 9UoJWhupUN5wC+4mjg2W2TYcUatrwJEoQQGJNlz+EcDHTLOlvVHbS7yraWo4Pj9DQhcn1J8P7LcyoAVo+m6eDQ==
-length: 3382
+edSignature: o8iU3nUas8bssDfy5w9ScWhR2Z9QPeu8VY5s5Bi+vqd9WAMjxvQBbKvNV9k+MS3nGFIlk8t+VEH9P23B9EmXBQ==
+length: 2903
 -->
